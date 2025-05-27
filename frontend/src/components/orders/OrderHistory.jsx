@@ -65,7 +65,7 @@ export default function OrderHistory() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Order History</h1>
+      <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Order History</h1>
       <div className="mt-12">
         <div className="space-y-8">
           {orders.map((order) => (

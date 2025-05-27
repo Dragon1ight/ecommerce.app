@@ -24,33 +24,49 @@ const ProductList = () => {
   }, []);
 
   if (loading) {
-    return <div className="flex justify-center items-center h-screen">Loading...</div>;
+    return (
+      <div className="min-h-screen bg-gray-900 text-white flex justify-center items-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white"></div>
+      </div>
+    );
   }
 
   if (error) {
-    return <div className="text-center text-red-500 mt-8">{error}</div>;
+    return (
+      <div className="min-h-screen bg-gray-900 text-white flex justify-center items-center">
+        <div className="text-red-500">{error}</div>
+      </div>
+    );
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h2 className="text-3xl font-bold text-center mb-8">Products</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {products.map((product) => (
-          <div key={product._id} className="border rounded-lg overflow-hidden shadow-lg flex flex-col">
-            <img src={product.image} alt={product.name} className="w-full h-48 object-cover" />
-            <div className="p-4 flex flex-col flex-grow">
-              <h3 className="text-lg font-semibold text-gray-800">{product.name}</h3>
-              <p className="text-sm text-gray-600">{product.category}</p>
-              <p className="text-xl font-bold text-gray-900 mt-2">${product.price.toFixed(2)}</p>
-              <button
-                onClick={() => addToCart(product)}
-                className="mt-4 w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700 transition duration-300"
-              >
-                Add to cart
-              </button>
+    <div className="min-h-screen bg-gray-900 text-white py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 className="text-3xl font-bold mb-8">Nos Produits</h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {products.map((product) => (
+            <div key={product._id} className="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+              <img
+                src={product.image}
+                alt={product.name}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
+                <p className="text-gray-400 mb-4">{product.description}</p>
+                <div className="flex justify-between items-center">
+                  <span className="text-xl font-bold">${product.price}</span>
+                  <button
+                    onClick={() => addToCart(product)}
+                    className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition-colors"
+                  >
+                    Ajouter au panier
+                  </button>
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

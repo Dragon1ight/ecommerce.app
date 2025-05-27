@@ -69,7 +69,7 @@ export default function Checkout() {
     return (
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center">
-          <h2 className="text-2xl font-extrabold text-gray-900 sm:text-3xl">Your cart is empty</h2>
+          <h2 className="text-2xl font-extrabold  sm:text-3xl">Your cart is empty</h2>
           <p className="mt-2 text-sm text-gray-500">
             Please add items to your cart before proceeding to checkout.
           </p>
@@ -90,14 +90,14 @@ export default function Checkout() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="lg:grid lg:grid-cols-12 lg:gap-x-12 lg:items-start">
         <div className="lg:col-span-7">
-          <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+          <h1 className="text-3xl font-extrabold tracking-tight  sm:text-4xl">
             Checkout
           </h1>
 
           <form onSubmit={handleSubmit} className="mt-12">
             <div className="space-y-6">
               <div>
-                <label htmlFor="address" className="block text-sm font-medium text-gray-700">
+                <label htmlFor="address" className="block text-sm font-medium">
                   Address
                 </label>
                 <input
@@ -113,7 +113,7 @@ export default function Checkout() {
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="city" className="block text-sm font-medium text-gray-700">
+                  <label htmlFor="city" className="block text-sm font-medium">
                     City
                   </label>
                   <input
@@ -128,7 +128,7 @@ export default function Checkout() {
                 </div>
 
                 <div>
-                  <label htmlFor="postalCode" className="block text-sm font-medium text-gray-700">
+                  <label htmlFor="postalCode" className="block text-sm font-medium">
                     Postal Code
                   </label>
                   <input
@@ -144,7 +144,7 @@ export default function Checkout() {
               </div>
 
               <div>
-                <label htmlFor="country" className="block text-sm font-medium text-gray-700">
+                <label htmlFor="country" className="block text-sm font-medium">
                   Country
                 </label>
                 <input
@@ -159,7 +159,7 @@ export default function Checkout() {
               </div>
 
               <div>
-                <label htmlFor="paymentMethod" className="block text-sm font-medium text-gray-700">
+                <label htmlFor="paymentMethod" className="block text-sm font-medium">
                   Payment Method
                 </label>
                 <select
@@ -195,7 +195,7 @@ export default function Checkout() {
 
         <div className="mt-10 lg:mt-0 lg:col-span-5">
           <div className="sticky top-6">
-            <h2 className="text-lg font-medium text-gray-900">Order summary</h2>
+            <h2 className="text-lg font-medium ">Order summary</h2>
             <div className="mt-4 bg-white border border-gray-200 rounded-lg shadow-sm">
               <ul role="list" className="divide-y divide-gray-200">
                 {cart.map((item) => (
@@ -204,7 +204,7 @@ export default function Checkout() {
                       <img
                         src={item.product.image}
                         alt={item.product.name}
-                        className="w-20 h-20 rounded-md object-cover object-center"
+                        className="w-20 h-20 rounded-md object-cover object-center text-gray-700"
                       />
                     </div>
 
@@ -212,7 +212,7 @@ export default function Checkout() {
                       <div className="flex">
                         <div className="min-w-0 flex-1">
                           <h4 className="text-sm">
-                            <a href={`/products/${item.product._id}`} className="font-medium text-gray-700 hover:text-gray-800">
+                            <a href={`/products/${item.product._id}`} className="font-medium hover:text-gray-800">
                               {item.product.name}
                             </a>
                           </h4>
@@ -225,7 +225,7 @@ export default function Checkout() {
                       </div>
 
                       <div className="mt-2 flex-1 flex items-end justify-between">
-                        <p className="text-sm font-medium text-gray-900">${item.product.price.toFixed(2)}</p>
+                        <p className="text-sm font-medium ">${item.product.price.toFixed(2)}</p>
 
                         <div className="ml-4">
                           {/* Removed Quantity select from checkout summary to avoid confusion */}
@@ -238,11 +238,11 @@ export default function Checkout() {
               <dl className="border-t border-gray-200 py-6 px-4 space-y-6 sm:px-6">
                 <div className="flex items-center justify-between">
                   <dt className="text-sm text-gray-600">Subtotal</dt>
-                  <dd className="text-sm font-medium text-gray-900">${getCartTotal().toFixed(2)}</dd>
+                  <dd className="text-sm font-medium text-gray-700">${getCartTotal().toFixed(2)}</dd>
                 </div>
                 <div className="flex items-center justify-between border-t border-gray-200 pt-6">
-                  <dt className="text-base font-medium text-gray-900">Order total</dt>
-                  <dd className="text-base font-medium text-gray-900">${getCartTotal().toFixed(2)}</dd>
+                  <dt className="text-base font-medium text-gray-700">Order total</dt>
+                  <dd className="text-base font-medium text-gray-700">${getCartTotal().toFixed(2)}</dd>
                 </div>
               </dl>
 

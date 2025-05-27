@@ -24,6 +24,10 @@ app.use('/api/users', require('./routes/users'));
 app.use('/api/products', require('./routes/products'));
 app.use('/api/orders', require('./routes/orders'));
 
+// Admin routes
+app.use('/api/admin/users', require('./routes/adminUserRoutes'));
+app.use('/api/admin/products', require('./routes/adminProductRoutes'));
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);

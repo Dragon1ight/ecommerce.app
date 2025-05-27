@@ -10,15 +10,19 @@ import ProductDetail from './components/products/ProductDetail';
 import Cart from './components/cart/Cart';
 import Checkout from './components/checkout/Checkout';
 import OrderHistory from './components/orders/OrderHistory';
+import AdminPage from './pages/AdminPage.jsx';
+import AdminUsersPage from './pages/admin/AdminUsersPage.jsx';
+import AdminProductsPage from './pages/admin/AdminProductsPage.jsx';
+import AdminOrdersPage from './pages/admin/AdminOrdersPage.jsx';
 
 function App() {
   return (
     <Router>
       <AuthProvider>
         <CartProvider>
-          <div className="min-h-screen bg-gray-100">
+          <div className="min-h-screen bg-gray-900">
             <Navbar />
-            <main className="container mx-auto py-10">
+            <main className="container mx-auto py-10 px-4">
               <Routes>
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
@@ -48,10 +52,14 @@ function App() {
                     </ProtectedRoute>
                   }
                 />
+                <Route path="/admin" element={<AdminPage />} />
+                <Route path="/admin/users" element={<ProtectedRoute><AdminUsersPage /></ProtectedRoute>} />
+                <Route path="/admin/products" element={<ProtectedRoute><AdminProductsPage /></ProtectedRoute>} />
+                <Route path="/admin/orders" element={<ProtectedRoute><AdminOrdersPage /></ProtectedRoute>} />
                 <Route path="/" element={<ProductList />} />
               </Routes>
             </main>
-          </div>
+      </div>
         </CartProvider>
       </AuthProvider>
     </Router>

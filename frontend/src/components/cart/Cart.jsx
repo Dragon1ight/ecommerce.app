@@ -28,7 +28,7 @@ export default function Cart() {
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <h1 className="text-2xl sm:text-3xl font-bold text-center mb-8">Shopping Cart</h1>
+      <h1 className="text-2xl sm:text-3xl font-bold text-center mb-8 ">Shopping Cart</h1>
       <div className="mt-8">
         <div className="flow-root">
           <ul className="-my-6 divide-y divide-gray-200">
@@ -44,7 +44,7 @@ export default function Cart() {
 
                 <div className="flex-1 flex flex-col">
                   <div>
-                    <div className="flex justify-between text-base font-medium text-gray-900">
+                    <div className="flex justify-between text-base font-medium ">
                       <h3 className="flex-1 mr-2 overflow-hidden text-ellipsis">{item.product.name}</h3>
                       <p className="ml-4 flex-shrink-0">${item.product.price.toFixed(2)}</p>
                     </div>
@@ -52,14 +52,14 @@ export default function Cart() {
                   </div>
                   <div className="flex-1 flex items-end justify-between text-sm mt-4">
                     <div className="flex items-center">
-                      <label htmlFor={`quantity-${item.product._id}`} className="mr-2 text-gray-500">
+                      <label htmlFor={`quantity-${item.product._id}`} className="mr-2">
                         Qty
                       </label>
                       <select
                         id={`quantity-${item.product._id}`}
                         value={item.quantity}
                         onChange={(e) => updateQuantity(item.product._id, Number(e.target.value))}
-                        className="rounded-md border-gray-300 py-1.5 text-base leading-5 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                        className="rounded-md border-gray-300 py-1.5 text-base leading-5 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm text-gray-700"
                       >
                         {[...Array(10)].map((_, i) => (
                           <option key={i + 1} value={i + 1}>
@@ -87,7 +87,7 @@ export default function Cart() {
       </div>
 
       <div className="border-t border-gray-200 py-6 mt-8">
-        <div className="flex justify-between text-base font-medium text-gray-900">
+        <div className="flex justify-between text-base font-medium">
           <p>Subtotal</p>
           <p>${getCartTotal().toFixed(2)}</p>
         </div>
