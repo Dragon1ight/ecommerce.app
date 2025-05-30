@@ -1,0 +1,9 @@
+# pack-refs with: peeled fully-peeled sorted 
+c041d3c78e3f13304d2c2a7299fc50a623afc3c9 refs/heads/dev1
+0689729223e6b1552221e2583e8f15051c91e61b refs/heads/feature/api
+9edb45130e8fbd63ae92d44c983179e5cb3c5ad5 refs/heads/feature/auth
+d5d7fda0abd8202ffc62eddb838da33161792f52 refs/heads/feature/frontend
+9edb45130e8fbd63ae92d44c983179e5cb3c5ad5 refs/heads/main
+4e9ef9f08d6fda4910a8df1d21fa20e66d056721 refs/heads/recette
+3d62e1dfb3f75640bce33f4614841ba1976966c3 refs/heads/recetteold
+3d62e1dfb3f75640bce33f4614841ba1976966c3 refs/pull/1/head
